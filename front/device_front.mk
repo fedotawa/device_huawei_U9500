@@ -168,10 +168,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.adb.notify=0 \
     persist.call_recording.enabled=1
 
-# SGX540 is slower with the scissor optimization enabled
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.hwui.disable_scissor_opt=true
-
 # adb has root
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.adb.secure=0 \
