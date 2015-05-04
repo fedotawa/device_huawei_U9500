@@ -89,6 +89,12 @@ PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/configs/gps.conf:system/etc/gps.conf \
     $(COMMON_FOLDER)/configs/gpsconfig.xml:system/etc/gpsconfig.xml
 
+# Wifi
+PRODUCT_COPY_FILES += \
+    $(COMMON_FOLDER)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(COMMON_FOLDER)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(COMMON_FOLDER)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+
 # Torch
 PRODUCT_PACKAGES += \
     Torch
