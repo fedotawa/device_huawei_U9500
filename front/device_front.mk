@@ -34,23 +34,28 @@ PRODUCT_PACKAGES += \
     tinycap \
     tinymix \
     tinyplay \
-    libaudioutils
-
-# Hardware HALs
-PRODUCT_PACKAGES += \
+    libaudioutils \
+    audio.r_submix.default \
     audio.a2dp.default \
-    audio.usb.default \
-    gralloc.omap4.so
+    audio.usb.default
 
+# bcmdhd
 PRODUCT_PACKAGES += \
     libnetcmdiface
 
 # PowerHAL
 PRODUCT_PACKAGES += \
     hwcomposer.front \
+    gralloc.omap4.so \
     libedid \
-    libion_ti \
     libstagefrighthw
+
+# OMAP4
+PRODUCT_PACKAGES += \
+    libion_ti \
+    smc_pa_ctrl \
+    tf_daemon \
+    libtf_crypto_sst
 
 # Symlinks
 PRODUCT_PACKAGES += \
@@ -69,10 +74,6 @@ PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/prebuilt/etc/utils/optimizedb:system/etc/utils/optimizedb \
     $(COMMON_FOLDER)/prebuilt/etc/utils/optimizestorage:system/etc/utils/optimizestorage \
     $(COMMON_FOLDER)/prebuilt/etc/init.d/11frandom:system/etc/init.d/11frandom
-
-# Tuning scripts
-PRODUCT_COPY_FILES += \
-    $(COMMON_FOLDER)/prebuilt/sbin/okernel1:root/sbin/okernel1
 
 # Media / Audio
 PRODUCT_COPY_FILES += \
@@ -186,8 +187,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.execution-mode=int:jit \
     dalvik.vm.dexopt-data-only=1 \
-    dalvik.vm.verify-bytecode=false \
-    dalvik.vm.dexopt-flags=v=a,o=v,m=y
+    dalvik.vm.verify-bytecode=false
 
 # Memory management
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -208,7 +208,5 @@ BOARD_WLAN_DEVICE_REV        := bcm4330_b1
 WIFI_BAND                    := 802_11_ABG
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-#$(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
