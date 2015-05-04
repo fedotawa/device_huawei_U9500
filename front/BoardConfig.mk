@@ -126,9 +126,6 @@ TARGET_PREBUILT_KERNEL := $(COMMON_FOLDER)/prebuilt/kernel
 BOARD_EGL_CFG := $(COMMON_FOLDER)/configs/egl.cfg
 USE_OPENGL_RENDERER := true
 
-# Compatibility with pre-kitkat Sensor HALs
-SENSORS_NEED_SETRATE_ON_ENABLE := true
-
 # Lights
 TARGET_PROVIDES_LIBLIGHTS := true
 
