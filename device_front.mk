@@ -34,7 +34,8 @@ PRODUCT_PACKAGES += \
     tinymix \
     tinyplay \
     libtinyalsa \
-    libaudioutils
+    libaudioutils \
+    audio.primary.omap4
 
 # Hardware HALs
 PRODUCT_PACKAGES += \

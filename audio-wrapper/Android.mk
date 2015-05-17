@@ -1,10 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(AUDIO_WRAPPER_CONFIG),)
-  include $(AUDIO_WRAPPER_CONFIG)
-else
-  include $(LOCAL_PATH)/config.mk
-endif
+include $(CLEAR_VARS)
 
 L_CFLAGS := -g -Wall
 
@@ -44,10 +40,6 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_MODULE := audio_policy.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
 
-include $(BUILD_SHARED_LIBRARY)
-#include $(BUILD_HEAPTRACKED_SHARED_LIBRARY)
-endif
-
 #
 # Audio HW Wrapper
 #
@@ -67,7 +59,3 @@ LOCAL_CFLAGS := $(L_CFLAGS)
 LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
 LOCAL_MODULE := audio.primary.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
-
-include $(BUILD_SHARED_LIBRARY)
-#include $(BUILD_HEAPTRACKED_SHARED_LIBRARY)
-endif
