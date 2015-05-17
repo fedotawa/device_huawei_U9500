@@ -16,11 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+COMMON_FOLDER := device/huawei/front
 
 $(call inherit-product, hardware/ti/omap4/omap4.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
-COMMON_FOLDER := device/huawei/front
 
 PRODUCT_CHARACTERISTICS := default
 DEVICE_PACKAGE_OVERLAYS := $(COMMON_FOLDER)/overlay
@@ -80,12 +79,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/configs/gps.conf:system/etc/gps.conf \
     $(COMMON_FOLDER)/configs/gpsconfig.xml:system/etc/gpsconfig.xml
-
-# Wifi
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
 
 # WiFi
 PRODUCT_PACKAGES += \
@@ -195,3 +188,4 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 $(call inherit-product-if-exists, vendor/huawei/front/front-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-1024-dalvik-heap.mk)
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330/device-bcm.mk)
