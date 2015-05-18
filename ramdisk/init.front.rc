@@ -98,6 +98,9 @@ on fs
     setprop ro.crypto.fuse_sdcard true
     setprop ro.crypto.tmpfs_options size=128m,mode=0771,uid=1000,gid=1000
 
+    # For oemlogo
+    symlink /cust /oem
+
     mkdir /dev/cpuctl/fg_boost
     chown system system /dev/cpuctl/fg_boost/tasks
     chmod 0777 /dev/cpuctl/fg_boost/tasks
