@@ -49,16 +49,6 @@ on init
 
     setprop ro.hwboottype boot_android
 
-    # We chown/chmod /factory because mount is run as root + defaults
-    chown radio radio /factory
-    chmod 0775 /factory
-
-    # add symlink for HDCP key
-    symlink /factory/hdcp.keys /system/vendor/firmware/hdcp.keys
-
-    # Preload libjhead for camera
-    #export LD_PRELOAD /system/lib/libjhead.so
-
 on post-fs-data
     mkdir /data/gps
     chown root system /data/gps
@@ -176,21 +166,7 @@ on fs
     chmod 0660 /sys/devices/virtual/usbswitch/usbsw/swstate
     chown system system /sys/devices/virtual/usbswitch/usbsw/swstate
 
-    chmod 0664 /sys/devices/platform/xmm_boot/state
-    chmod 0660 /sys/devices/platform/xmm_boot/io
-    chmod 0660 /sys/devices/platform/xmm_boot/power
-    chown radio radio /sys/devices/platform/xmm_boot/state
-    chown radio radio /sys/devices/platform/xmm_boot/io
-    chown radio radio /sys/devices/platform/xmm_boot/power
-    chmod 0660 /sys/devices/platform/xmm_boot/cp_shutdown
-    chown radio radio /sys/devices/platform/xmm_boot/cp_shutdown
-    chmod 0660 /sys/devices/platform/xmm_boot/flashless
-    chmod 0660 /sys/devices/platform/xmm_boot/hsimode
-    chmod 0660 /sys/devices/platform/xmm_boot/hsi_drvmode
-    chown radio radio /sys/devices/platform/xmm_boot/flashless
-    chown radio radio /sys/devices/platform/xmm_boot/hsimode
-    chown radio radio /sys/devices/platform/xmm_boot/hsi_drvmode
-
+    # Radio
     chmod 0660 /modem/modem_image/HWT6260.fls
     chmod 0660 /modem/nvm1/calib.nvm
     chmod 0660 /modem/nvm1/dynamic.nvm
@@ -205,6 +181,21 @@ on fs
     chown radio radio /modem/nvm1/dynamic.nvm
     chown radio radio /modem/nvm1/static.nvm
     chown radio radio /modem/modem_image/HWT6260.fls.fls
+
+    chmod 0664 /sys/devices/platform/xmm_boot/state
+    chmod 0660 /sys/devices/platform/xmm_boot/io
+    chmod 0660 /sys/devices/platform/xmm_boot/power
+    chown radio radio /sys/devices/platform/xmm_boot/state
+    chown radio radio /sys/devices/platform/xmm_boot/io
+    chown radio radio /sys/devices/platform/xmm_boot/power
+    chmod 0660 /sys/devices/platform/xmm_boot/cp_shutdown
+    chown radio radio /sys/devices/platform/xmm_boot/cp_shutdown
+    chmod 0660 /sys/devices/platform/xmm_boot/flashless
+    chmod 0660 /sys/devices/platform/xmm_boot/hsimode
+    chmod 0660 /sys/devices/platform/xmm_boot/hsi_drvmode
+    chown radio radio /sys/devices/platform/xmm_boot/flashless
+    chown radio radio /sys/devices/platform/xmm_boot/hsimode
+    chown radio radio /sys/devices/platform/xmm_boot/hsi_drvmode
 
     chown system system /sys/bus/i2c/drivers/cma3000_accl/4-001c
     chown system system /sys/bus/i2c/drivers/cma3000_accl/4-001c/enable
