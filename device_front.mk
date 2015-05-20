@@ -49,12 +49,12 @@ PRODUCT_PACKAGES += \
     power.front \
     camera.omap4
 
-# Ramdisk
+# Init scripts
 PRODUCT_COPY_FILES += \
-    $(COMMON_FOLDER)/ramdisk/init.front.rc:root/init.front.rc \
-    $(COMMON_FOLDER)/ramdisk/init.front.usb.rc:root/init.front.usb.rc \
-    $(COMMON_FOLDER)/ramdisk/ueventd.front.rc:root/ueventd.front.rc \
-    $(COMMON_FOLDER)/ramdisk/fstab.front:root/fstab.front
+    $(COMMON_FOLDER)/rootdir/init.front.rc:root/init.front.rc \
+    $(COMMON_FOLDER)/rootdir/init.front.usb.rc:root/init.front.usb.rc \
+    $(COMMON_FOLDER)/rootdir/ueventd.front.rc:root/ueventd.front.rc \
+    $(COMMON_FOLDER)/rootdir/fstab.front:root/fstab.front
 
 # Utilities
 PRODUCT_COPY_FILES += \
