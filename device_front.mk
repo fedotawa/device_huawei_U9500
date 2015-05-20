@@ -34,18 +34,15 @@ PRODUCT_PACKAGES += \
     tinymix \
     tinyplay \
     libtinyalsa \
-    libaudioutils \
-    audio.primary.omap4
+    libaudioutils
 
 # Hardware HALs
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
-    gralloc.omap4.so
-
-# HALs
-PRODUCT_PACKAGES += \
+    audio.primary.omap4 \
+    gralloc.omap4.so \
     power.front \
     camera.omap4
 
