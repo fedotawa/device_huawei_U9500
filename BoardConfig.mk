@@ -131,6 +131,6 @@ BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 BOARD_UMS_LUNFILE := "/sys/class/android_usb/f_mass_storage/lun/file"
 TARGET_RECOVERY_INITRC := $(COMMON_FOLDER)/recovery/init.rc
 TARGET_PREBUILT_RECOVERY_KERNEL := $(COMMON_FOLDER)/recovery/recovery_kernel
-TARGET_RECOVERY_FSTAB := $(COMMON_FOLDER)/ramdisk/fstab.front
+TARGET_RECOVERY_FSTAB := $(COMMON_FOLDER)/rootdir/fstab.front
 RECOVERY_FSTAB_VERSION := 2
 TARGET_NO_SEPARATE_RECOVERY := true
