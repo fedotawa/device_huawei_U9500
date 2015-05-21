@@ -1,0 +1,46 @@
+
+project vendor/cm/
+diff --git a/vendor/cm/config/common.mk b/vendor/cm/config/common.mk
+index 0847ee0..bac8af8 100644
+--- a/vendor/cm/config/common.mk
++++ b/vendor/cm/config/common.mk
+@@ -182,7 +182,6 @@ PRODUCT_PACKAGES += \
+     mke2fs \
+     tune2fs \
+     bash \
+-    nano \
+     htop \
+     powertop \
+     lsof \
+@@ -231,7 +230,7 @@ PRODUCT_PACKAGES += \
+ endif
+ 
+ PRODUCT_PROPERTY_OVERRIDES += \
+-    persist.sys.root_access=1
++    persist.sys.root_access=3
+ 
+ PRODUCT_PACKAGE_OVERLAYS += vendor/cm/overlay/common
+ 
+diff --git a/vendor/cm/config/common_full.mk b/vendor/cm/config/common_full.mk
+index 4d60e5e..40661dd 100644
+--- a/vendor/cm/config/common_full.mk
++++ b/vendor/cm/config/common_full.mk
+@@ -23,6 +23,5 @@ PRODUCT_PACKAGES += \
+ 
+ # Extra tools in CM
+ PRODUCT_PACKAGES += \
+-    vim \
+     zip \
+     unrar
+diff --git a/vendor/cm/overlay/common/frameworks/base/core/res/res/values/config.xml b/vendor/cm/overlay/common/frameworks/base/core/res/res/values/config.xml
+index 15b16a7..6d01942 100644
+--- a/vendor/cm/overlay/common/frameworks/base/core/res/res/values/config.xml
++++ b/vendor/cm/overlay/common/frameworks/base/core/res/res/values/config.xml
+@@ -23,7 +23,6 @@
+     </string-array>
+ 
+     <bool name="config_cellBroadcastAppLinks">true</bool>
+-    <bool name="config_showNavigationBar">true</bool>
+ 
+     <!-- Disable stock OTA components if installed -->
+     <string-array name="config_disabledComponents" translatable="false">
