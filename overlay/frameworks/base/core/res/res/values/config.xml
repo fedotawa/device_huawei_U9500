@@ -24,6 +24,23 @@
     <!-- SD card is hot-pluggable on this platform -->
     <bool translatable="false" name="config_batterySdCardAccessibility">true</bool>
 
+    <!-- Default color for notification LED is white. -->
+    <color translatable="false" name="config_defaultNotificationColor">#ff00ff00</color>
+
+    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
+    <bool translatable="false" name="config_multiColorBatteryLed">true</bool>
+
+    <!-- Does the notification LED support multiple colors?
+         Used to decide if the user can change the colors -->
+    <bool translatable="false" name="config_multiColorNotificationLed">true</bool>
+
+    <!-- Is the battery LED intrusive?
+         Used to decide if there should be a disable option -->
+    <bool translatable="false" name="config_intrusiveBatteryLed">true</bool>
+
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+    <bool translatable="false" name="config_intrusiveNotificationLed">true</bool>
+
     <!-- CRT animation -->
     <bool translatable="false" name="config_animateScreenLights">false</bool>
 
