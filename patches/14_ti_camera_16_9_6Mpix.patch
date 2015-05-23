@@ -1,0 +1,30 @@
+
+project hardware/ti/omap4/
+diff --git a/hardware/ti/omap4/camera/OMXCameraAdapter/OMXCapabilities.cpp b/hardware/ti/omap4/camera/OMXCameraAdapter/OMXCapabilities.cpp
+index 63bd4c2..741e92b 100644
+--- a/hardware/ti/omap4/camera/OMXCameraAdapter/OMXCapabilities.cpp
++++ b/hardware/ti/omap4/camera/OMXCameraAdapter/OMXCapabilities.cpp
+@@ -70,6 +70,7 @@ const CapResolution OMXCameraAdapter::mImageCapRes [] = {
+     { 4000, 3000, "4000x3000" },
+     { 3648, 2736, "3648x2736" },
+     { 3264, 2448, "3264x2448" },
++    { 3264, 1836, "3264x1836" },
+     { 2608, 1960, "2608x1960" },
+     { 2592, 1944, "2592x1944" },
+     { 2592, 1728, "2592x1728" },
+@@ -103,6 +104,7 @@ const CapResolution OMXCameraAdapter::mImageCapResSS [] = {
+    { 4032*2, 3024, "8064x3024" },
+    { 3648*2, 2736, "7296x2736" },
+    { 3264*2, 2448, "6528x2448" },
++   { 3264*2, 1836, "6528x1836" },
+    { 2592*2, 1944, "5184x1944" },
+    { 2048*2, 1536, "4096x1536" },
+    { 1600*2, 1200, "3200x1200" },
+@@ -117,6 +119,7 @@ const CapResolution OMXCameraAdapter::mImageCapResTB [] = {
+    { 4032, 3024*2, "4032x6048" },
+    { 3648, 2736*2, "3648x5472" },
+    { 3264, 2448*2, "3264x4896" },
++   { 3264, 1836*2, "3264x3672" },
+    { 2592, 1944*2, "2592x3888" },
+    { 2048, 1536*2, "2048x3072" },
+    { 1600, 1200*2, "1600x2400" },
