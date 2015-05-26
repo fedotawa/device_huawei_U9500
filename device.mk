@@ -44,7 +44,8 @@ PRODUCT_PACKAGES += \
     audio.primary.omap4 \
     gralloc.omap4.so \
     power.front \
-    camera.omap4
+    camera.omap4 \
+    lights.omap4
 
 # Init scripts
 PRODUCT_COPY_FILES += \
