@@ -183,13 +183,9 @@ set_light_locked(struct light_device_t* dev,
 
     colorRGB = state->color;
 
-//    red = ((colorRGB >> 16) & 0xFF)? 255: 0;
-//    green = ((colorRGB >> 8) & 0xFF)? 255: 0;
-//    blue = (colorRGB & 0xFF)? 255: 0;
-    
-    red = ((colorRGB >> 16) & 0xFF);
-    green = ((colorRGB >> 8) & 0xFF);
-    blue = (colorRGB & 0xFF);
+    red = ((colorRGB >> 16) & 0xFF) > 64 ? 255: 0;
+    green = ((colorRGB >> 8) & 0xFF) > 64 ? 255: 0;
+    blue = (colorRGB & 0xFF) > 64 ? 255: 0;
 
     err = write_int(RED_LED_FILE, red);
     err = write_int(GREEN_LED_FILE, green);
